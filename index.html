@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BUMDes Suwaluh Mandiri Sejahtera</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* Style tambahan untuk merata kiri hero content */
+    .hero-content {
+      text-align: center !important;
+      max-width: 760px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    .hero-badge {
+      display: none;
+    }
+    
+    .hero-actions {
+      justify-content: center;
+    }
+    
+    @media (max-width: 768px) {
+      .hero-content {
+        text-align: center !important;
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a class="nav-brand" href="index.html">
+        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj-pp89vk96KV32rX2Ngid7XRhyphenhyphendbRx4NS74bpPc_lcJ5yqx2U2oxBx2-SWuvt2jVgohPwCg90h0QaQPHyIj-I3rwwe_48iNRoeip7JREZGByj6MZoMWgsiIZoi2p2rWgOX-lBWvGqUAUc93MfZTXtVRFmAMoCEdeZs96WpV9_r1_9FEzbD4zOxcdZGVf2M/s1024/logo%20bumdes%20sms.png" alt="Logo BUMDes SMS" class="brand-icon-img">
+        <div>
+          <span class="brand-name">BUMDes SMS</span>
+          <span class="brand-sub">Suwaluh Mandiri Sejahtera</span>
+        </div>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html" class="nav-link active">Beranda</a></li>
+        <li><a href="unit-wisata.html" class="nav-link">Unit Wisata</a></li>
+        <li><a href="transparansi.html" class="nav-link">Transparansi</a></li>
+        <li><a href="penyertaan-modal.html" class="nav-link">Modal</a></li>
+        <li><a href="saran.html" class="nav-link">Saran</a></li>
+        <li><a href="kontak.html" class="nav-link">Kontak</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Buka menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content fade-up">
+      <h1 class="hero-title">BUMDes Suwaluh<br><em>Mandiri Sejahtera</em></h1>
+      <p class="footer-tagline">Bersatu dalam ikatan, Mandiri dalam Usaha, Sejahtera Bersama</p>
+      <div class="hero-actions">
+        <a href="#profil-lengkap" class="btn btn-primary">Lihat Profil Usaha Kami</a>
+        <a href="transparansi.html" class="btn btn-outline">Laporan Keuangan</a>
+      </div>
+    </div>
+    <div class="hero-stats">
+      <div class="stat-card fade-up" style="--delay:.1s">
+        <span class="stat-icon">🏬</span>
+        <span class="stat-number" data-target="7">0</span>
+        <span class="stat-label">Unit Usaha</span>
+      </div>
+      <div class="stat-card fade-up" style="--delay:.2s">
+        <span class="stat-icon">💵</span>
+        <span class="stat-number">10M</span>
+        <span class="stat-label">Nilai Aset</span>
+      </div>
+      <div class="stat-card fade-up" style="--delay:.3s">
+        <span class="stat-icon">📊</span>
+        <span class="stat-number">646Jt</span>
+        <span class="stat-label">Penyertaan Modal</span>
+      </div>
+      <div class="stat-card fade-up" style="--delay:.4s">
+        <span class="stat-icon">🧑‍🤝‍🧑</span>
+        <span class="stat-number" data-target="30">0</span>
+        <span class="stat-label">Tenaga Kerja</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Profil Lengkap BUMDes -->
+  <section id="profil-lengkap" class="tentang section-pad">
+    <div class="container">
+      <div class="section-header fade-up">
+        <span class="section-badge">Profil BUMDes</span>
+        <h2 class="section-title">Mengenal BUMDes Suwaluh Mandiri Sejahtera</h2>
+        <p class="section-desc">Badan usaha milik desa yang menggerakkan ekonomi masyarakat</p>
+      </div>
+
+      <div class="tentang-grid fade-up">
+        <div class="tentang-text">
+          <h3 class="sub-title" style="font-size: 1.3rem;">Tentang Kami</h3>
+          <p><strong>BUMDes Suwaluh Mandiri Sejahtera</strong> didirikan pada tahun 2016 berdasarkan Peraturan Desa No. 03/2016 tentang Pendirian Badan Usaha Milik Desa. BUMDes ini dikelola oleh Pemerintah Desa bersama masyarakat setempat.</p>
+          <p>Visi kami adalah <strong>"Mewujudkan Desa Suwaluh yang mandiri, sejahtera, dan berdaya saing melalui pengelolaan potensi desa secara profesional dan berkelanjutan"</strong>.</p>
+          <p>Misi BUMDes Suwaluh:</p>
+          <ul style="list-style: disc; padding-left: 1.5rem; margin-top: 1rem;">
+            <li>Mengembangkan unit usaha yang berbasis potensi lokal</li>
+            <li>Meningkatkan partisipasi masyarakat dalam pengelolaan BUMDes</li>
+            <li>Menciptakan lapangan kerja baru bagi warga desa</li>
+            <li>Mengelola keuangan secara transparan dan akuntabel</li>
+          </ul>
+        </div>
+        <div class="tentang-visual">
+          <div class="visual-card v1">
+            <span class="vc-icon">📅</span>
+            <h4>Tahun Berdiri</h4>
+            <p>2016 - 9 tahun berkontribusi untuk desa</p>
+          </div>
+          <div class="visual-card v2">
+            <span class="vc-icon">👥</span>
+            <h4>Tenaga Kerja</h4>
+            <p>30 tenaga kerja lokal terserap</p>
+          </div>
+          <div class="visual-card v3">
+            <span class="vc-icon">💰</span>
+            <h4>Penyertaan Modal</h4>
+            <p>Rp 646.000.000 dari masyarakat</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Struktur Organisasi -->
+      <div style="margin-top: 4rem;">
+        <div class="section-header fade-up">
+          <span class="section-badge">Struktur Organisasi</span>
+          <h2 class="section-title">Pengurus BUMDes Suwaluh</h2>
+          <p class="section-desc">Dikelola oleh putra-putri terbaik Desa Suwaluh</p>
+        </div>
+        <div class="org-hierarchy fade-up" id="orgGrid"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Unit Usaha Preview -->
+  <section class="usaha section-pad bg-light">
+    <div class="container">
+      <div class="section-header fade-up">
+        <span class="section-badge">Unit Usaha</span>
+        <h2 class="section-title">Unit Usaha Kami</h2>
+        <p class="section-desc">Berbagai layanan wisata dan usaha desa yang siap melayani Anda</p>
+      </div>
+      <div class="usaha-filter fade-up" id="usahaFilter">
+        <button class="filter-btn active" data-cat="semua">Semua</button>
+        <button class="filter-btn" data-cat="wisata">Wisata</button>
+        <button class="filter-btn" data-cat="kuliner">Kuliner</button>
+        <button class="filter-btn" data-cat="jasa">Jasa</button>
+      </div>
+      <div class="usaha-grid fade-up" id="usahaGrid"></div>
+      <div style="text-align:center; margin-top:2rem">
+        <a href="unit-wisata.html" class="btn btn-primary">Lihat Semua Unit Usaha</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj-pp89vk96KV32rX2Ngid7XRhyphenhyphendbRx4NS74bpPc_lcJ5yqx2U2oxBx2-SWuvt2jVgohPwCg90h0QaQPHyIj-I3rwwe_48iNRoeip7JREZGByj6MZoMWgsiIZoi2p2rWgOX-lBWvGqUAUc93MfZTXtVRFmAMoCEdeZs96WpV9_r1_9FEzbD4zOxcdZGVf2M/s1024/logo%20bumdes%20sms.png" alt="Logo BUMDes SMS" class="brand-icon-img">
+          <h4 class="footer-title">
+           BUMDes Suwaluh <span class="footer-highlight">Mandiri Sejahtera</span>
+          </h4>
+          <p class="footer-tagline">
+            Bersatu dalam ikatan, Mandiri dalam Usaha, Sejahtera Bersama
+          </p>
+        </div>
+        <div class="footer-links">
+          <h5>Menu Cepat</h5>
+          <ul>
+            <li><a href="index.html">Beranda</a></li>
+            <li><a href="unit-wisata.html">Unit Usaha</a></li>
+            <li><a href="transparansi.html">Transparansi</a></li>
+            <li><a href="penyertaan-modal.html">Penyertaan Modal</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h5>Layanan</h5>
+          <ul>
+            <li><a href="saran.html">Saran & Masukan</a></li>
+            <li><a href="kontak.html">Kontak</a></li>
+          </ul>
+        </div>
+        <div class="footer-kontak">
+          <h5>Kontak</h5>
+          <p>📍 Desa Suwaluh, Sidoarjo</p>
+          <p>📞 0812-3456-7890</p>
+          <p>✉️ bumdes.suwaluh@gmail.com</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 BUMDes Suwaluh Mandiri Sejahtera. Hak cipta dilindungi.</p>
+      </div>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast"></div>
+  <button class="back-to-top" id="backToTop" aria-label="Kembali ke atas">↑</button>
+
+  <!-- ============================================ -->
+  <!-- ADMIN PANEL TERSEMBUNYI DI BAWAH              -->
+  <!-- ============================================ -->
+
+  <!-- Secret Trigger (Klik 5x pada logo) -->
+  <div class="secret-trigger" title="Admin Area (Klik 5x pada logo)">
+    🔒
+  </div>
+
+  <!-- Admin Login Overlay -->
+  <div class="admin-login-overlay" id="adminLoginOverlay">
+    <div class="admin-login-card">
+      <h3>🔐 Admin Login</h3>
+      <input type="text" id="adminUsername" placeholder="Username" />
+      <input type="password" id="adminPassword" placeholder="Password" />
+      <button onclick="attemptLogin()">Masuk</button>
+      <div class="admin-login-error" id="adminLoginError">Username atau password salah!</div>
+    </div>
+  </div>
+
+  <!-- Admin Panel Container (Muncul dari bawah) -->
+  <div class="admin-panel-container" id="adminPanelContainer">
+    <div class="admin-panel-header">
+      <h3>🌿 Admin Panel BUMDes Suwaluh</h3>
+      <button class="close-admin-panel" onclick="hideAdminPanel()">✕</button>
+    </div>
+    <div class="admin-panel-body">
+      <!-- Admin Tabs -->
+      <div class="admin-tabs">
+        <button class="admin-tab-btn active" data-tab="usaha" onclick="switchAdminTab('usaha')">🏢 Unit Usaha</button>
+        <button class="admin-tab-btn" data-tab="investor" onclick="switchAdminTab('investor')">💰 Investor</button>
+        <button class="admin-tab-btn" data-tab="berita" onclick="switchAdminTab('berita')">📰 Berita</button>
+        <button class="admin-tab-btn" data-tab="saran" onclick="switchAdminTab('saran')">💬 Saran</button>
+        <button class="admin-tab-btn" data-tab="organisasi" onclick="switchAdminTab('organisasi')">👥 Organisasi</button>
+        <button class="admin-tab-btn" data-tab="logout" onclick="logoutAdmin()" style="background:#fee2e2;color:#e76f51;">🚪 Logout</button>
+      </div>
+
+      <!-- Tab Unit Usaha -->
+      <div class="admin-tab-content active" id="admin-tab-usaha">
+        <button class="admin-btn-add" onclick="openAdminUsahaForm()">+ Tambah Unit Usaha</button>
+        <div style="overflow-x: auto;">
+          <table class="admin-table">
+            <thead>
+              <tr><th>ID</th><th>Nama</th><th>Kategori</th><th>Harga</th><th>Aksi</th></tr>
+            </thead>
+            <tbody id="adminUsahaTableBody"></tbody>
+          </table>
+        </div>
+        <div class="admin-form hidden" id="adminUsahaForm">
+          <h4 style="margin-bottom: 1rem;">Form Unit Usaha</h4>
+          <input type="hidden" id="adminEditUsahaId" />
+          <div class="admin-form-row">
+            <div class="admin-form-group">
+              <label>Nama Usaha</label>
+              <input type="text" id="adminNamaUsaha" />
+            </div>
+            <div class="admin-form-group">
+              <label>Kategori</label>
+              <select id="adminKategoriUsaha">
+                <option value="wisata">Wisata</option>
+                <option value="kuliner">Kuliner</option>
+                <option value="jasa">Jasa</option>
+              </select>
+            </div>
+            <div class="admin-form-group">
+              <label>Harga</label>
+              <input type="text" id="adminHargaUsaha" />
+            </div>
+            <div class="admin-form-group">
+              <label>Jam Operasional</label>
+              <input type="text" id="adminJadwalUsaha" />
+            </div>
+            <div class="admin-form-group">
+              <label>Icon (Emoji)</label>
+              <input type="text" id="adminIconUsaha" placeholder="🏊" />
+            </div>
+          </div>
+          <div class="admin-form-group">
+            <label>Deskripsi</label>
+            <textarea id="adminDeskripsiUsaha" rows="2"></textarea>
+          </div>
+          <div style="display: flex; gap: 0.5rem; margin-top: 1rem;">
+            <button class="admin-btn-add" onclick="saveAdminUsaha()">Simpan</button>
+            <button class="admin-btn-delete" onclick="closeAdminUsahaForm()">Batal</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tab Investor -->
+      <div class="admin-tab-content" id="admin-tab-investor">
+        <button class="admin-btn-add" onclick="openAdminInvestorForm()">+ Tambah Investor</button>
+        <div style="overflow-x: auto;">
+          <table class="admin-table">
+            <thead><tr><th>ID</th><th>Nama</th><th>Alamat</th><th>Nominal</th><th>Aksi</th></tr></thead>
+            <tbody id="adminInvestorTableBody"></tbody>
+          </table>
+        </div>
+        <div class="admin-form hidden" id="adminInvestorForm">
+          <h4 style="margin-bottom: 1rem;">Form Investor</h4>
+          <input type="hidden" id="adminEditInvestorId" />
+          <div class="admin-form-row">
+            <div class="admin-form-group">
+              <label>Nama Lengkap</label>
+              <input type="text" id="adminNamaInvestor" />
+            </div>
+            <div class="admin-form-group">
+              <label>Alamat</label>
+              <input type="text" id="adminAlamatInvestor" />
+            </div>
+            <div class="admin-form-group">
+              <label>Nominal (Rp)</label>
+              <input type="number" id="adminNominalInvestor" />
+            </div>
+            <div class="admin-form-group">
+              <label>Tanggal</label>
+              <input type="date" id="adminTanggalInvestor" />
+            </div>
+          </div>
+          <div style="display: flex; gap: 0.5rem; margin-top: 1rem;">
+            <button class="admin-btn-add" onclick="saveAdminInvestor()">Simpan</button>
+            <button class="admin-btn-delete" onclick="closeAdminInvestorForm()">Batal</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tab Berita -->
+      <div class="admin-tab-content" id="admin-tab-berita">
+        <button class="admin-btn-add" onclick="openAdminBeritaForm()">+ Tambah Berita</button>
+        <div style="overflow-x: auto;">
+          <table class="admin-table">
+            <thead><tr><th>ID</th><th>Judul</th><th>Kategori</th><th>Tanggal</th><th>Aksi</th></tr></thead>
+            <tbody id="adminBeritaTableBody"></tbody>
+          </table>
+        </div>
+        <div class="admin-form hidden" id="adminBeritaForm">
+          <h4 style="margin-bottom: 1rem;">Form Berita</h4>
+          <input type="hidden" id="adminEditBeritaId" />
+          <div class="admin-form-row">
+            <div class="admin-form-group">
+              <label>Judul Berita</label>
+              <input type="text" id="adminJudulBerita" />
+            </div>
+            <div class="admin-form-group">
+              <label>Kategori</label>
+              <select id="adminKategoriBerita">
+                <option value="wisata">Wisata</option>
+                <option value="kegiatan">Kegiatan</option>
+                <option value="pengumuman">Pengumuman</option>
+              </select>
+            </div>
+            <div class="admin-form-group">
+              <label>Tanggal</label>
+              <input type="text" id="adminTanggalBerita" placeholder="15 April 2025" />
+            </div>
+            <div class="admin-form-group">
+              <label>Icon</label>
+              <input type="text" id="adminIconBerita" placeholder="🎉" />
+            </div>
+          </div>
+          <div class="admin-form-group">
+            <label>Deskripsi</label>
+            <textarea id="adminDeskripsiBerita" rows="2"></textarea>
+          </div>
+          <div style="display: flex; gap: 0.5rem; margin-top: 1rem;">
+            <button class="admin-btn-add" onclick="saveAdminBerita()">Simpan</button>
+            <button class="admin-btn-delete" onclick="closeAdminBeritaForm()">Batal</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tab Saran -->
+      <div class="admin-tab-content" id="admin-tab-saran">
+        <div style="overflow-x: auto;">
+          <table class="admin-table">
+            <thead><tr><th>ID</th><th>Nama</th><th>Pesan</th><th>Rating</th><th>Aksi</th></tr></thead>
+            <tbody id="adminSaranTableBody"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Tab Organisasi -->
+      <div class="admin-tab-content" id="admin-tab-organisasi">
+        <button class="admin-btn-add" onclick="openAdminOrganisasiForm()">+ Tambah Pengurus</button>
+        <div style="overflow-x: auto;">
+          <table class="admin-table">
+            <thead><tr><th>No</th><th>Nama</th><th>Jabatan</th><th>Aksi</th></tr></thead>
+            <tbody id="adminOrganisasiTableBody"></tbody>
+          </table>
+        </div>
+        <div class="admin-form hidden" id="adminOrganisasiForm">
+          <h4 style="margin-bottom: 1rem;">Form Pengurus</h4>
+          <input type="hidden" id="adminEditOrganisasiId" />
+          <div class="admin-form-row">
+            <div class="admin-form-group">
+              <label>Nama Lengkap</label>
+              <input type="text" id="adminNamaOrganisasi" />
+            </div>
+            <div class="admin-form-group">
+              <label>Jabatan</label>
+              <input type="text" id="adminJabatanOrganisasi" />
+            </div>
+            <div class="admin-form-group">
+              <label>Icon (Emoji)</label>
+              <input type="text" id="adminIconOrganisasi" placeholder="👑" />
+            </div>
+            <div class="admin-form-group">
+              <label>Urutan</label>
+              <input type="number" id="adminUrutanOrganisasi" min="1" />
+            </div>
+          </div>
+          <div style="display: flex; gap: 0.5rem; margin-top: 1rem;">
+            <button class="admin-btn-add" onclick="saveAdminOrganisasi()">Simpan</button>
+            <button class="admin-btn-delete" onclick="closeAdminOrganisasiForm()">Batal</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

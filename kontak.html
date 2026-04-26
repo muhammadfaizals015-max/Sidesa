@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BUMDes Suwaluh - Kontak</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .kontak-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 2.5rem; align-items: start; }
+    .kontak-item { display: flex; gap: 1rem; align-items: flex-start; margin-bottom: 1.4rem; }
+    .k-icon { font-size: 1.6rem; margin-top: .1rem; }
+    .sosmed-row { display: flex; gap: .7rem; margin-top: 1rem; }
+    .sosmed-btn { width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; border-radius: 50%; background: var(--green-pale); font-size: 1.2rem; transition: all var(--transition); }
+    .sosmed-btn:hover { background: var(--green-main); transform: translateY(-3px); }
+    .map-placeholder { height: 320px; background: linear-gradient(135deg, var(--green-pale), var(--gray-100)); border-radius: var(--radius-md); display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 2rem; border: 1px solid var(--gray-200); }
+    @media (max-width:900px) { .kontak-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar" id="navbar">
+  <div class="nav-container">
+    <a class="nav-brand" href="index.html">
+      <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj-pp89vk96KV32rX2Ngid7XRhyphenhyphendbRx4NS74bpPc_lcJ5yqx2U2oxBx2-SWuvt2jVgohPwCg90h0QaQPHyIj-I3rwwe_48iNRoeip7JREZGByj6MZoMWgsiIZoi2p2rWgOX-lBWvGqUAUc93MfZTXtVRFmAMoCEdeZs96WpV9_r1_9FEzbD4zOxcdZGVf2M/s1024/logo%20bumdes%20sms.png"
+           alt="Logo BUMDes SMS"
+           class="brand-icon-img" />
+      <div>
+        <span class="brand-name">BUMDes SMS</span>
+        <span class="brand-sub">Suwaluh Mandiri Sejahtera</span>
+      </div>
+    </a>
+
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html" class="nav-link">Beranda</a></li>
+      <li><a href="unit-wisata.html" class="nav-link">Unit Wisata</a></li>
+      <li><a href="transparansi.html" class="nav-link">Transparansi</a></li>
+      <li><a href="penyertaan-modal.html" class="nav-link">Modal</a></li>
+      <li><a href="saran.html" class="nav-link">Saran</a></li>
+      <li><a href="kontak.html" class="nav-link">Kontak</a></li>
+    </ul>
+
+    <button class="hamburger" id="hamburger" aria-label="Buka menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+  <section class="hero" style="min-height: 40vh; padding-top: 64px;">
+    <div class="hero-bg"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content fade-up" style="text-align: center !important;">
+      <h1 class="hero-title">Hubungi <em>Kami</em></h1>
+      <p class="hero-tagline">Siap melayani Anda dengan sepenuh hati</p>
+    </div>
+  </section>
+
+  <section class="kontak section-pad bg-light">
+    <div class="container">
+      <div class="kontak-grid fade-up">
+        <div class="kontak-info">
+          <div class="kontak-item"><span class="k-icon">📍</span><div><strong>Alamat</strong><p>Desa Suwaluh, Kec. Balongbendo,<br>Kab. Sidoarjo, Jawa Timur 61262</p></div></div>
+          <div class="kontak-item"><span class="k-icon">📞</span><div><strong>Telepon / WhatsApp</strong><p><a href="https://wa.me/6281234567890" target="_blank">0812-3456-7890</a></p></div></div>
+          <div class="kontak-item"><span class="k-icon">✉️</span><div><strong>Email</strong><p><a href="mailto:bumdes.suwaluh@gmail.com">bumdes.suwaluh@gmail.com</a></p></div></div>
+          <div class="kontak-item"><span class="k-icon">🕐</span><div><strong>Jam Operasional</strong><p>Senin – Jumat: 08.00 – 17.00<br>Sabtu – Minggu: 07.00 – 18.00</p></div></div>
+          <div class="sosmed-row">
+            <a href="#" class="sosmed-btn" title="Facebook">📘</a>
+            <a href="#" class="sosmed-btn" title="Instagram">📸</a>
+            <a href="#" class="sosmed-btn" title="YouTube">▶️</a>
+            <a href="https://wa.me/6281234567890" class="sosmed-btn" title="WhatsApp">💬</a>
+          </div>
+        </div>
+        <div class="kontak-map">
+          <div class="map-placeholder">
+            <p>🗺️ Peta Lokasi BUMDes Suwaluh</p>
+            <p style="font-size:.85rem;opacity:.7">Desa Suwaluh, Kec. Balongbendo, Kab. Sidoarjo</p>
+            <a href="https://maps.google.com/?q=Desa+Suwaluh+Balongbendo+Sidoarjo" target="_blank" class="btn btn-primary" style="margin-top:1rem">Buka di Google Maps</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand"><span class="brand-icon">🌿</span><h4>BUMDes Suwaluh Mandiri Sejahtera</h4><p>Membangun ekonomi desa melalui pengelolaan potensi lokal yang berkelanjutan.</p></div>
+        <div class="footer-links"><h5>Menu Cepat</h5><ul><li><a href="index.html">Beranda</a></li><li><a href="unit-wisata.html">Unit Usaha</a></li><li><a href="transparansi.html">Transparansi</a></li><li><a href="penyertaan-modal.html">Penyertaan Modal</a></li></ul></div>
+        <div class="footer-links"><h5>Layanan</h5><ul><li><a href="saran.html">Saran & Masukan</a></li><li><a href="kontak.html">Kontak</a></li></ul></div>
+        <div class="footer-kontak"><h5>Kontak</h5><p>📍 Desa Suwaluh, Sidoarjo</p><p>📞 0812-3456-7890</p><p>✉️ bumdes.suwaluh@gmail.com</p></div>
+      </div>
+      <div class="footer-bottom"><p>© 2025 BUMDes Suwaluh Mandiri Sejahtera. Hak cipta dilindungi.</p></div>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast"></div>
+  <button class="back-to-top" id="backToTop" aria-label="Kembali ke atas">↑</button>
+
+  <!-- ADMIN PANEL TERSEMBUNYI -->
+  <div class="secret-trigger" title="Admin Area (Klik 5x pada logo)">🔒</div>
+  <div class="admin-login-overlay" id="adminLoginOverlay">
+    <div class="admin-login-card"><h3>🔐 Admin Login</h3><input type="text" id="adminUsername" placeholder="Username" /><input type="password" id="adminPassword" placeholder="Password" /><button onclick="attemptLogin()">Masuk</button><div class="admin-login-error" id="adminLoginError">Username atau password salah!</div></div>
+  </div>
+  <div class="admin-panel-container" id="adminPanelContainer">
+    <div class="admin-panel-header"><h3>🌿 Admin Panel BUMDes Suwaluh</h3><button class="close-admin-panel" onclick="hideAdminPanel()">✕</button></div>
+    <div class="admin-panel-body">
+      <div class="admin-tabs">
+        <button class="admin-tab-btn active" data-tab="usaha" onclick="switchAdminTab('usaha')">🏢 Unit Usaha</button>
+        <button class="admin-tab-btn" data-tab="investor" onclick="switchAdminTab('investor')">💰 Investor</button>
+        <button class="admin-tab-btn" data-tab="berita" onclick="switchAdminTab('berita')">📰 Berita</button>
+        <button class="admin-tab-btn" data-tab="saran" onclick="switchAdminTab('saran')">💬 Saran</button>
+        <button class="admin-tab-btn" data-tab="organisasi" onclick="switchAdminTab('organisasi')">👥 Organisasi</button>
+        <button class="admin-tab-btn" data-tab="logout" onclick="logoutAdmin()" style="background:#fee2e2;color:#e76f51;">🚪 Logout</button>
+      </div>
+      <div class="admin-tab-content active" id="admin-tab-usaha"><button class="admin-btn-add" onclick="openAdminUsahaForm()">+ Tambah Unit Usaha</button><div style="overflow-x: auto;"><table class="admin-table"><thead><tr><th>ID</th><th>Nama</th><th>Kategori</th><th>Harga</th><th>Aksi</th></tr></thead><tbody id="adminUsahaTableBody"></tbody></table></div><div class="admin-form hidden" id="adminUsahaForm"><h4>Form Unit Usaha</h4><input type="hidden" id="adminEditUsahaId" /><div class="admin-form-row"><div class="admin-form-group"><label>Nama</label><input type="text" id="adminNamaUsaha" /></div><div class="admin-form-group"><label>Kategori</label><select id="adminKategoriUsaha"><option value="wisata">Wisata</option><option value="kuliner">Kuliner</option><option value="jasa">Jasa</option></select></div><div class="admin-form-group"><label>Harga</label><input type="text" id="adminHargaUsaha" /></div><div class="admin-form-group"><label>Jadwal</label><input type="text" id="adminJadwalUsaha" /></div><div class="admin-form-group"><label>Icon</label><input type="text" id="adminIconUsaha" /></div></div><div class="admin-form-group"><label>Deskripsi</label><textarea id="adminDeskripsiUsaha" rows="2"></textarea></div><div><button class="admin-btn-add" onclick="saveAdminUsaha()">Simpan</button><button class="admin-btn-delete" onclick="closeAdminUsahaForm()">Batal</button></div></div></div>
+      <div class="admin-tab-content" id="admin-tab-investor"><button class="admin-btn-add" onclick="openAdminInvestorForm()">+ Tambah Investor</button><div style="overflow-x: auto;"><table class="admin-table"><thead><tr><th>ID</th><th>Nama</th><th>Alamat</th><th>Nominal</th><th>Aksi</th></tr></thead><tbody id="adminInvestorTableBody"></tbody></table></div><div class="admin-form hidden" id="adminInvestorForm"><h4>Form Investor</h4><input type="hidden" id="adminEditInvestorId" /><div class="admin-form-row"><div class="admin-form-group"><label>Nama</label><input type="text" id="adminNamaInvestor" /></div><div class="admin-form-group"><label>Alamat</label><input type="text" id="adminAlamatInvestor" /></div><div class="admin-form-group"><label>Nominal</label><input type="number" id="adminNominalInvestor" /></div><div class="admin-form-group"><label>Tanggal</label><input type="date" id="adminTanggalInvestor" /></div></div><div><button class="admin-btn-add" onclick="saveAdminInvestor()">Simpan</button><button class="admin-btn-delete" onclick="closeAdminInvestorForm()">Batal</button></div></div></div>
+      <div class="admin-tab-content" id="admin-tab-berita"><button class="admin-btn-add" onclick="openAdminBeritaForm()">+ Tambah Berita</button><div style="overflow-x: auto;"><table class="admin-table"><thead><tr><th>ID</th><th>Judul</th><th>Kategori</th><th>Tanggal</th><th>Aksi</th></tr></thead><tbody id="adminBeritaTableBody"></tbody></table></div><div class="admin-form hidden" id="adminBeritaForm"><h4>Form Berita</h4><input type="hidden" id="adminEditBeritaId" /><div class="admin-form-row"><div class="admin-form-group"><label>Judul</label><input type="text" id="adminJudulBerita" /></div><div class="admin-form-group"><label>Kategori</label><select id="adminKategoriBerita"><option value="wisata">Wisata</option><option value="kegiatan">Kegiatan</option><option value="pengumuman">Pengumuman</option></select></div><div class="admin-form-group"><label>Tanggal</label><input type="text" id="adminTanggalBerita" /></div><div class="admin-form-group"><label>Icon</label><input type="text" id="adminIconBerita" /></div></div><div class="admin-form-group"><label>Deskripsi</label><textarea id="adminDeskripsiBerita" rows="2"></textarea></div><div><button class="admin-btn-add" onclick="saveAdminBerita()">Simpan</button><button class="admin-btn-delete" onclick="closeAdminBeritaForm()">Batal</button></div></div></div>
+      <div class="admin-tab-content" id="admin-tab-saran"><div style="overflow-x: auto;"><table class="admin-table"><thead><tr><th>ID</th><th>Nama</th><th>Pesan</th><th>Rating</th><th>Aksi</th></tr></thead><tbody id="adminSaranTableBody"></tbody></table></div></div>
+      <div class="admin-tab-content" id="admin-tab-organisasi"><button class="admin-btn-add" onclick="openAdminOrganisasiForm()">+ Tambah Pengurus</button><div style="overflow-x: auto;"><table class="admin-table"><thead><tr><th>No</th><th>Nama</th><th>Jabatan</th><th>Aksi</th></tr></thead><tbody id="adminOrganisasiTableBody"></tbody></table></div><div class="admin-form hidden" id="adminOrganisasiForm"><h4>Form Pengurus</h4><input type="hidden" id="adminEditOrganisasiId" /><div class="admin-form-row"><div class="admin-form-group"><label>Nama</label><input type="text" id="adminNamaOrganisasi" /></div><div class="admin-form-group"><label>Jabatan</label><input type="text" id="adminJabatanOrganisasi" /></div><div class="admin-form-group"><label>Icon</label><input type="text" id="adminIconOrganisasi" /></div><div class="admin-form-group"><label>Urutan</label><input type="number" id="adminUrutanOrganisasi" /></div></div><div><button class="admin-btn-add" onclick="saveAdminOrganisasi()">Simpan</button><button class="admin-btn-delete" onclick="closeAdminOrganisasiForm()">Batal</button></div></div></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

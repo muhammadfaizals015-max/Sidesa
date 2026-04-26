@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BUMDes Suwaluh - Transparansi Keuangan</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* Lightweight styles for preview modal */
+    .preview-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.75);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 12000;
+      padding: 1rem;
+    }
+    .preview-overlay.open { display:flex; }
+    .preview-card {
+      width: 100%;
+      max-width: 960px;
+      height: 90vh;
+      background: #fff;
+      border-radius: 12px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+    .preview-header {
+      padding: 0.6rem 1rem;
+      background: #f3f6f4;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:1rem;
+      border-bottom: 1px solid #e6efe6;
+    }
+    .preview-body {
+      flex:1;
+      display:flex;
+      align-items:stretch;
+      justify-content:stretch;
+      background:#fff;
+    }
+    .preview-iframe {
+      width:100%;
+      height:100%;
+      border: none;
+    }
+    .preview-img {
+      width:100%;
+      height:100%;
+      object-fit:contain;
+      background: #000;
+    }
+    .preview-actions button {
+      margin-left: .5rem;
+    }
+
+    /* small fix for laporan list layout */
+    .laporan-item .laporan-info h4 { margin: 0; }
+    .laporan-item .laporan-info p { margin: 0; color: var(--gray-500); font-size:.9rem; }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar" id="navbar">
+  <div class="nav-container">
+    <a class="nav-brand" href="index.html">
+      <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj-pp89vk96KV32rX2Ngid7XRhyphenhyphendbRx4NS74bpPc_lcJ5yqx2U2oxBx2-SWuvt2jVgohPwCg90h0QaQPHyIj-I3rwwe_48iNRoeip7JREZGByj6MZoMWgsiIZoi2p2rWgOX-lBWvGqUAUc93MfZTXtVRFmAMoCEdeZs96WpV9_r1_9FEzbD4zOxcdZGVf2M/s1024/logo%20bumdes%20sms.png"
+           alt="Logo BUMDes SMS"
+           class="brand-icon-img" />
+      <div>
+        <span class="brand-name">BUMDes SMS</span>
+        <span class="brand-sub">Suwaluh Mandiri Sejahtera</span>
+      </div>
+    </a>
+
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html" class="nav-link">Beranda</a></li>
+      <li><a href="unit-wisata.html" class="nav-link">Unit Wisata</a></li>
+      <li><a href="transparansi.html" class="nav-link">Transparansi</a></li>
+      <li><a href="penyertaan-modal.html" class="nav-link">Modal</a></li>
+      <li><a href="saran.html" class="nav-link">Saran</a></li>
+      <li><a href="kontak.html" class="nav-link">Kontak</a></li>
+    </ul>
+
+    <button class="hamburger" id="hamburger" aria-label="Buka menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+  <section class="hero" style="min-height: 40vh; padding-top: 64px;">
+    <div class="hero-bg"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content fade-up" style="text-align: center !important;">
+      <h1 class="hero-title">Transparansi <em>Keuangan</em></h1>
+      <p class="hero-tagline">Komitmen kami terhadap laporan transparan, terperinci, sesuai SAK EMKM</p>
+    </div>
+  </section>
+
+  <section class="transparansi section-pad">
+    <div class="container">
+      <div class="section-header fade-up">
+        <span class="section-badge">Laporan Keuangan</span>
+        <h2 class="section-title">Dokumen Keuangan BUMDes</h2>
+        <p class="section-desc">Seluruh laporan keuangan dapat diakses secara terbuka oleh masyarakat</p>
+      </div>
+
+      <div class="tabs fade-up" id="tabsTransparansi">
+        <button class="tab-btn active" data-tab="laporan">📄 Laporan Keuangan</button>
+        <button class="tab-btn" data-tab="analisis">📊 Analisis Keuangan</button>
+        <button class="tab-btn" data-tab="tren">📈 Tren & Visualisasi</button>
+      </div>
+
+      <div class="tab-content active fade-up" id="tab-laporan">
+        <div class="laporan-filter" style="display:flex;gap:1rem;align-items:center;margin-bottom:1rem">
+          <select id="filterTahun">
+            <option value="2025">2025</option>
+            <option value="2024">2024</option>
+            <option value="2023">2023</option>
+            <option value="2022">2022</option>
+            <option value="2021">2021</option>
+          </select>
+          <div style="margin-left:auto;color:var(--gray-500);font-size:.9rem">Preview tersedia langsung (tanpa download)</div>
+        </div>
+        <div class="laporan-list" id="laporanList"></div>
+      </div>
+
+      <div class="tab-content" id="tab-analisis">
+        <div class="analisis-grid" id="analisisGrid"></div>
+      </div>
+
+      <div class="tab-content" id="tab-tren">
+        <div class="grafik-grid">
+          <div class="grafik-card">
+            <h4>📈 Pertumbuhan Pendapatan (Juta Rp)</h4>
+            <canvas id="grafikPendapatan"></canvas>
+          </div>
+          <div class="grafik-card">
+            <h4>💰 Laba / Rugi Tahunan (Juta Rp)</h4>
+            <canvas id="grafikLaba"></canvas>
+          </div>
+          <div class="grafik-card">
+            <h4>💧 Arus Kas (Juta Rp)</h4>
+            <canvas id="grafikKas"></canvas>
+          </div>
+          <div class="grafik-card">
+            <h4>📊 Profitabilitas (%)</h4>
+            <canvas id="grafikProfit"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Preview modal (embedded viewer) -->
+  <div id="laporanPreviewOverlay" class="preview-overlay" aria-hidden="true">
+    <div class="preview-card" role="dialog" aria-modal="true" aria-label="Preview Laporan">
+      <div class="preview-header">
+        <div id="previewTitle" style="font-weight:700"></div>
+        <div class="preview-actions">
+          <button class="btn" id="btnPreviewOpen">Buka (Tab Baru)</button>
+          <button class="btn" id="btnPreviewDownload">Download</button>
+          <button class="btn btn-delete" id="btnPreviewClose">Tutup</button>
+        </div>
+      </div>
+      <div class="preview-body" id="previewBody">
+        <!-- iframe/img akan di-inject di sini -->
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <span class="brand-icon">🌿</span>
+          <h4>BUMDes Suwaluh Mandiri Sejahtera</h4>
+          <p>Membangun ekonomi desa melalui pengelolaan potensi lokal yang berkelanjutan.</p>
+        </div>
+        <div class="footer-links">
+          <h5>Menu Cepat</h5>
+          <ul>
+            <li><a href="index.html">Beranda</a></li>
+            <li><a href="unit-wisata.html">Unit Usaha</a></li>
+            <li><a href="transparansi.html">Transparansi</a></li>
+            <li><a href="penyertaan-modal.html">Penyertaan Modal</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h5>Layanan</h5>
+          <ul>
+            <li><a href="saran.html">Saran & Masukan</a></li>
+            <li><a href="kontak.html">Kontak</a></li>
+          </ul>
+        </div>
+        <div class="footer-kontak">
+          <h5>Kontak</h5>
+          <p>📍 Desa Suwaluh, Sidoarjo</p>
+          <p>📞 0812-3456-7890</p>
+          <p>✉️ bumdes.suwaluh@gmail.com</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 BUMDes Suwaluh Mandiri Sejahtera. Hak cipta dilindungi.</p>
+      </div>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast"></div>
+  <button class="back-to-top" id="backToTop" aria-label="Kembali ke atas">↑</button>
+
+  <!-- ADMIN PANEL TERSEMBUNYI -->
+  <div class="secret-trigger" title="Admin Area (Klik 5x pada logo)">🔒</div>
+  <div class="admin-login-overlay" id="adminLoginOverlay">
+    <div class="admin-login-card">
+      <h3>🔐 Admin Login</h3>
+      <input type="text" id="adminUsername" placeholder="Username" />
+      <input type="password" id="adminPassword" placeholder="Password" />
+      <button onclick="attemptLogin()">Masuk</button>
+      <div class="admin-login-error" id="adminLoginError">Username atau password salah!</div>
+    </div>
+  </div>
+  <div class="admin-panel-container" id="adminPanelContainer">
+    <div class="admin-panel-header">
+      <h3>🌿 Admin Panel BUMDes Suwaluh</h3>
+      <button class="close-admin-panel" onclick="hideAdminPanel()">✕</button>
+    </div>
+    <div class="admin-panel-body">
+      <div class="admin-tabs">
+        <button class="admin-tab-btn active" data-tab="usaha" onclick="switchAdminTab('usaha')">🏢 Unit Usaha</button>
+        <button class="admin-tab-btn" data-tab="investor" onclick="switchAdminTab('investor')">💰 Investor</button>
+        <button class="admin-tab-btn" data-tab="berita" onclick="switchAdminTab('berita')">📰 Berita</button>
+        <button class="admin-tab-btn" data-tab="saran" onclick="switchAdminTab('saran')">💬 Saran</button>
+        <button class="admin-tab-btn" data-tab="organisasi" onclick="switchAdminTab('organisasi')">👥 Organisasi</button>
+        <button class="admin-tab-btn" data-tab="logout" onclick="logoutAdmin()" style="background:#fee2e2;color:#e76f51;">🚪 Logout</button>
+      </div>
+
+      <!-- existing admin tab contents (usaha/investor/berita/saran/organisasi) are present in HTML from original project -->
+      <!-- Laporan tab will be injected dynamically by script.js (ensureAdminLaporanTab) -->
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

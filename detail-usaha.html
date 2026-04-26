@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Detail Unit Usaha - BUMDes Suwaluh</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .detail-hero {
+      min-height: 50vh;
+      padding-top: 64px;
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+
+    .detail-container {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem;
+    }
+
+    .breadcrumb {
+      display: flex;
+      gap: 0.5rem;
+      margin-bottom: 2rem;
+      font-size: 0.9rem;
+      color: var(--gray-500);
+    }
+
+    .breadcrumb a {
+      color: var(--green-main);
+      text-decoration: none;
+    }
+
+    .breadcrumb a:hover {
+      text-decoration: underline;
+    }
+
+    .detail-header {
+      margin-bottom: 2rem;
+    }
+
+    .detail-title {
+      font-family: var(--font-display);
+      font-size: 2.2rem;
+      color: var(--green-dark);
+      margin-bottom: 0.5rem;
+    }
+
+    .detail-meta {
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+      margin-top: 1rem;
+      font-size: 0.95rem;
+    }
+
+    .detail-meta-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .detail-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 2rem;
+      align-items: start;
+      margin-bottom: 3rem;
+    }
+
+    .detail-media {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-md);
+    }
+
+    .detail-main-image {
+      width: 100%;
+      height: 450px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .detail-gallery {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0.5rem;
+      padding: 1rem;
+      background: var(--white);
+    }
+
+    .detail-thumb {
+      width: 100%;
+      height: 90px;
+      object-fit: cover;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      border: 2px solid transparent;
+      transition: all var(--transition);
+    }
+
+    .detail-thumb:hover {
+      border-color: var(--green-main);
+      transform: scale(1.05);
+    }
+
+    .detail-sidebar {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      padding: 1.5rem;
+      box-shadow: var(--shadow-md);
+      border: 1px solid var(--gray-200);
+    }
+
+    .detail-price {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--green-main);
+      margin-bottom: 1.5rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 2px solid var(--gray-200);
+    }
+
+    .detail-info-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .detail-info-item {
+      display: flex;
+      flex-direction: column;
+      gap: 0.3rem;
+    }
+
+    .detail-info-item strong {
+      color: var(--green-dark);
+      font-size: 0.9rem;
+    }
+
+    .detail-info-item p {
+      color: var(--gray-600);
+      font-size: 0.95rem;
+    }
+
+    .detail-rating {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 1.5rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 2px solid var(--gray-200);
+    }
+
+    .detail-rating-stars {
+      font-size: 1.2rem;
+      color: var(--accent);;
+    }
+
+    .detail-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+    }
+
+    .detail-btn {
+      padding: 0.8rem 1rem;
+      border-radius: var(--radius-sm);
+      font-weight: 600;
+      text-align: center;
+      cursor: pointer;
+      border: none;
+      transition: all var(--transition);
+    }
+
+    .detail-btn-primary {
+      background: var(--green-main);
+      color: var(--white);
+    }
+
+    .detail-btn-primary:hover {
+      background: var(--green-dark);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .detail-btn-secondary {
+      background: var(--green-pale);
+      color: var(--green-dark);
+      border: 1px solid var(--green-main);
+    }
+
+    .detail-btn-secondary:hover {
+      background: var(--green-light);
+      color: var(--white);
+    }
+
+    .detail-section {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--gray-200);
+      margin-bottom: 2rem;
+    }
+
+    .detail-section h3 {
+      font-size: 1.3rem;
+      color: var(--green-dark);
+      margin-bottom: 1rem;
+      padding-bottom: 0.8rem;
+      border-bottom: 2px solid var(--green-pale);
+    }
+
+    .detail-section p {
+      color: var(--gray-600);
+      line-height: 1.8;
+      margin-bottom: 1rem;
+    }
+
+    .detail-facilities {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .facility-card {
+      background: var(--green-pale);
+      padding: 1rem;
+      border-radius: var(--radius-md);
+      text-align: center;
+      border: 1px solid var(--green-light);
+    }
+
+    .facility-icon {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .facility-name {
+      color: var(--green-dark);
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+
+    .highlight-box {
+      background: linear-gradient(135deg, var(--green-pale), var(--gray-100));
+      border-left: 4px solid var(--green-main);
+      padding: 1.2rem;
+      border-radius: var(--radius-md);
+      margin: 1rem 0;
+    }
+
+    .highlight-box strong {
+      color: var(--green-dark);
+    }
+
+    @media (max-width: 900px) {
+      .detail-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .detail-title {
+        font-size: 1.8rem;
+      }
+
+      .detail-gallery {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .detail-meta {
+        flex-direction: column;
+        gap: 1rem;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .detail-gallery {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .detail-facilities {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .detail-main-image {
+        height: 300px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a class="nav-brand" href="index.html">
+        <span class="brand-icon">🌿</span>
+        <div>
+          <span class="brand-name">BUMDes SMS</span>
+          <span class="brand-sub">Suwaluh Mandiri Sejahtera</span>
+        </div>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html" class="nav-link">Beranda</a></li>
+        <li><a href="unit-wisata.html" class="nav-link active">Unit Wisata</a></li>
+        <li><a href="transparansi.html" class="nav-link">Transparansi</a></li>
+        <li><a href="penyertaan-modal.html" class="nav-link">Modal</a></li>
+        <li><a href="saran.html" class="nav-link">Saran</a></li>
+        <li><a href="kontak.html" class="nav-link">Kontak</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Buka menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Breadcrumb -->
+  <div class="detail-container" style="padding-top: 80px;">
+    <div class="breadcrumb">
+      <a href="index.html">Beranda</a>
+      <span>/</span>
+      <a href="unit-wisata.html">Unit Wisata</a>
+      <span>/</span>
+      <span id="breadcrumb-current">Detail Usaha</span>
+    </div>
+  </div>
+
+  <!-- Detail Content -->
+  <section class="detail-container" id="usahaDetail">
+    <!-- Content akan di-render oleh JavaScript -->
+  </section>
+
+  <!-- Related/Similar Units Section -->
+  <section class="section-pad" style="background: var(--gray-50);">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Unit Usaha Lainnya</h2>
+        <p class="section-desc">Cek unit usaha kami yang lain</p>
+      </div>
+      <div class="usaha-grid" id="relatedUsaha"></div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <span class="brand-icon">🌿</span>
+          <h4>BUMDes Suwaluh Mandiri Sejahtera</h4>
+          <p>Membangun ekonomi desa melalui pengelolaan potensi lokal yang berkelanjutan.</p>
+        </div>
+        <div class="footer-links">
+          <h5>Menu Cepat</h5>
+          <ul>
+            <li><a href="index.html">Beranda</a></li>
+            <li><a href="unit-wisata.html">Unit Usaha</a></li>
+            <li><a href="transparansi.html">Transparansi</a></li>
+            <li><a href="penyertaan-modal.html">Penyertaan Modal</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h5>Layanan</h5>
+          <ul>
+            <li><a href="saran.html">Saran & Masukan</a></li>
+            <li><a href="kontak.html">Kontak</a></li>
+          </ul>
+        </div>
+        <div class="footer-kontak">
+          <h5>Kontak</h5>
+          <p>📍 Desa Suwaluh, Sidoarjo</p>
+          <p>📞 0812-3456-7890</p>
+          <p>✉️ bumdes.suwaluh@gmail.com</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 BUMDes Suwaluh Mandiri Sejahtera. Hak cipta dilindungi.</p>
+      </div>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast"></div>
+  <button class="back-to-top" id="backToTop" aria-label="Kembali ke atas">↑</button>
+
+  <!-- ADMIN PANEL (same as other pages) -->
+  <div class="secret-trigger" title="Admin Area (Klik 5x pada logo)">🔒</div>
+  <div class="admin-login-overlay" id="adminLoginOverlay">
+    <div class="admin-login-card">
+      <h3>🔐 Admin Login</h3>
+      <input type="text" id="adminUsername" placeholder="Username" />
+      <input type="password" id="adminPassword" placeholder="Password" />
+      <button onclick="attemptLogin()">Masuk</button>
+      <div class="admin-login-error" id="adminLoginError">Username atau password salah!</div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+  <script>
+    // Extended renderUsahaDetail function untuk halaman detail-usaha.html
+    document.addEventListener('DOMContentLoaded', function() {
+      console.log('Detail usaha halaman loaded');
+      renderUsahaDetail();
+      initNavbar();
+      initBackToTop();
+      initFadeUp();
+      initSecretTrigger();
+      renderRelatedUsaha();
+    });
+
+    function renderRelatedUsaha() {
+      const params = new URLSearchParams(window.location.search);
+      const currentId = parseInt(params.get('id'), 10);
+      
+      const allUsaha = window.dataUsaha || JSON.parse(localStorage.getItem('adminUsaha') || '[]') || [];
+      const related = allUsaha.filter(u => u.id !== currentId).slice(0, 3);
+      
+      const container = document.getElementById('relatedUsaha');
+      if (!container) return;
+      
+      container.innerHTML = related.map(u => {
+        let image = u.image && u.image.trim() !== '' ? u.image : 'https://via.placeholder.com/700x400?text=No+Image';
+        return `
+          <div class="usaha-card">
+            <div class="usaha-img">
+              <img 
+                src="${image}" 
+                alt="${escapeHTML(u.nama)}"
+                onerror="this.src='https://via.placeholder.com/700x400?text=No+Image'"
+                style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            <div class="usaha-body">
+              <div class="usaha-name">${escapeHTML(u.nama)}</div>
+              <div class="usaha-harga">💰 ${escapeHTML(u.harga || '-')}</div>
+              <div class="usaha-actions">
+                <button class="btn btn-primary" style="flex:1;padding:.5rem;" onclick="goToDetail(${u.id})">Lihat</button>
+              </div>
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+  </script>
+</body>
+</html>
